@@ -1,0 +1,41 @@
+// import Button from "./components/Button";
+// import { IoIosArrowForward } from "react-icons/io";
+// import InputField from "./components/InputField";
+// import InputFieldError from "./components/InputFieldError";
+// import RadioSelect from "./components/RadioSelect";
+// import NumberField from "./components/NumberField";
+// function App() {
+//   return (
+//     <div className="h-screen bg-black-soft font-manrope">
+//       <Button
+//         className={
+//           "bg-orange-primary px-7 py-4 font-bold text-gray-0 hover:bg-orange-secondary"
+//         }
+//         title={"SEE PRODUCT"}
+//       />
+//       <Button
+//         className={
+//           "border-[1px] border-black-full bg-none px-7 py-4 font-bold text-black-full hover:bg-black-full hover:text-gray-0"
+//         }
+//         title={"SEE PRODUCT"}
+//       />
+//       <Button
+//         className={
+//           "flex items-center gap-2 text-center font-bold text-black-full text-opacity-50 hover:text-orange-primary"
+//         }
+//         title={"SHOP"}
+//         icon={<IoIosArrowForward className="text-orange-primary" />}
+//       />
+//       <InputField
+//         textColor={"text-black-full"}
+//         placeholder={"text"}
+//         label={"text"}
+//       />
+//       <InputFieldError placeholder={"text"} label={"text"} />
+//       <RadioSelect label="test" />
+//       <NumberField />
+//     </div>
+//   );
+// }
+
+// export default App;
