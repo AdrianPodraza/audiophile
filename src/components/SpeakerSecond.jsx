@@ -2,7 +2,6 @@ import useScreenType from "../hooks/useScreenType";
 import Button from "./Button";
 function SpeakerSecond() {
   const screenType = useScreenType();
-  console.log(screenType);
 
   return (
     <div>
@@ -17,6 +16,7 @@ function SpeakerSecond() {
             "max-w-[250px] border-[1px] border-black-full bg-none px-7 py-4 font-bold text-black-full transition-all duration-300 hover:bg-black-full hover:text-gray-0 xl:place-self-start"
           }
           title={"SEE PRODUCT"}
+          slug={"zx7-speaker"}
         />
       </div>
     </div>

@@ -3,7 +3,7 @@ import useScreenType from "../hooks/useScreenType";
 function BottomSecttion() {
   const screenType = useScreenType();
   return (
-    <div className="flex flex-col items-center gap-10 xl:flex-row">
+    <div className="flex flex-col items-center gap-10 pb-12 md:pb-32 xl:flex-row">
       {screenType === "mobile" ? (
         <img src="/image-best-gear-mobile.jpg" className="rounded-xl" />
       ) : screenType === "tablet" ? (

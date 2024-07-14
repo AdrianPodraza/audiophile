@@ -3,8 +3,11 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
 
 import gsap from "gsap";
-import MenuMobile from "./MenuMobile";
+import MenuMobile from "../components/MenuMobile";
 import { NavLink } from "react-router-dom";
+import logo from "../assets/logo.svg";
+import cart from "../assets/icon-cart.svg";
+
 function Navbar() {
   const menu = [
     { title: "Home" },
@@ -34,7 +37,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="border-black flex justify-between border-b-[1px] border-opacity-20 py-9">
+      <nav className="border-black fixed top-0 z-50 flex w-full justify-between border-b-[1px] border-opacity-20 bg-black-full px-4 py-9 sm:px-10 md:px-40">
         <div className="flex items-center gap-4">
           <IoClose
             onClick={handleMenu}
@@ -46,7 +49,7 @@ function Navbar() {
             className={`${isOpen ? "hidden" : "flex"} cursor-pointer text-white sm:hidden`}
           />
 
-          <img src="./logo.svg" />
+          <img src={logo} />
         </div>
 
         <ul className="hidden gap-8 text-white sm:flex">
@@ -65,7 +68,7 @@ function Navbar() {
           ))}
         </ul>
 
-        <img className="h-5" src="./icon-cart.svg" />
+        <img className="h-5" src={cart} />
       </nav>
       {isOpen && <MenuMobile id="menu" />}
     </>

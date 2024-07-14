@@ -1,6 +1,9 @@
 import Button from "./Button";
+import slugify from "react-slugify";
 
 function HeadphonesItem({ img, name, desc, reverseOrder }) {
+  const slug = slugify(name);
+
   return (
     <div
       className={`flex flex-col items-center gap-5 xl:flex-row xl:items-center xl:gap-28 ${reverseOrder ? "xl:flex-row-reverse" : ""}`}
@@ -21,6 +24,7 @@ function HeadphonesItem({ img, name, desc, reverseOrder }) {
             "bg-orange-primary px-7 py-4 font-bold text-gray-0 transition-all duration-300 hover:bg-orange-secondary"
           }
           title={"SEE PRODUCT"}
+          slug={slug}
         />
       </div>
     </div>

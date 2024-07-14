@@ -10,3 +10,6 @@
 .nav-active {
   border-bottom: 2px solid orange;
 }
+body {
+  padding-top: 98px;
+}

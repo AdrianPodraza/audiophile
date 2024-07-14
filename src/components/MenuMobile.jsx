@@ -1,13 +1,16 @@
 import Button from "./Button";
 import { IoIosArrowForward } from "react-icons/io";
+import speakers from "../assets/menu-images/speakers.png";
+import earphones from "../assets/menu-images/earphones.png";
+import headphones from "../assets/menu-images/headphones.png";
 function MenuMobile({ id }) {
   return (
     <div
       id={id}
-      className="flex w-screen max-w-full flex-col items-center gap-11 bg-white py-11 sm:max-w-full sm:flex-row sm:justify-between"
+      className="flex w-screen max-w-full flex-col items-center gap-11 bg-gray-100 py-11 sm:max-w-full sm:flex-row sm:justify-between"
     >
       <div className="flex w-full flex-col items-center gap-4 rounded-lg bg-gray-200 pb-4">
-        <img className="-mt-9 w-24" src="./headphones.png" alt="headphones" />
+        <img className="-mt-9 w-24" src={headphones} alt="headphones" />
         <span className="text-[15px] font-bold">Headphones</span>
         <Button
           className={
@@ -18,7 +21,7 @@ function MenuMobile({ id }) {
         />
       </div>
       <div className="flex w-full flex-col items-center gap-4 rounded-lg bg-gray-200 pb-4">
-        <img className="-mt-9 w-24" src="./speakers.png" alt="Speakers" />
+        <img className="-mt-9 w-24" src={speakers} alt="Speakers" />
         <span className="text-[15px] font-bold">SPEAKERS</span>
         <Button
           className={
@@ -29,7 +32,7 @@ function MenuMobile({ id }) {
         />
       </div>
       <div className="flex w-full flex-col items-center gap-4 rounded-lg bg-gray-200 pb-4">
-        <img className="-mt-9 w-24" src="./earphones.png" alt="Earphones" />
+        <img className="-mt-9 w-24" src={earphones} alt="Earphones" />
         <span className="text-[15px] font-bold">EARPHONES</span>
         <Button
           className={

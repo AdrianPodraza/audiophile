@@ -18,6 +18,7 @@ function Hero() {
             "max-w-[160px] bg-orange-primary px-7 py-4 text-[13px] font-bold text-gray-0 hover:bg-orange-secondary"
           }
           title={"SEE PRODUCT"}
+          slug={"xx99-mark-ii-headphones"}
         />
       </div>
     </section>

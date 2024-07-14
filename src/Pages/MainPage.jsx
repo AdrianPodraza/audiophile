@@ -5,14 +5,14 @@ import Navbar from "../components/Navbar";
 import SpeakerFirst from "../components/SpeakerFirst";
 import SpeakerSecond from "../components/SpeakerSecond";
 import SpeakerThird from "../components/SpeakerThird";
+
 import Home from "./Home";
 
 function MainPage() {
   return (
     <>
-      <div className="bg-black-soft px-4 sm:px-10 md:px-40">
-        <Navbar />
-      </div>
+      <Navbar />
+
       <Home />
       <div className="hidden px-4 sm:flex sm:px-10 md:px-40">
         <MenuMobile />

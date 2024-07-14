@@ -35,6 +35,7 @@ function SpeakerFirst() {
               "border-[1px] border-black-full bg-black-full px-7 py-4 font-bold text-white transition-all duration-300 hover:bg-[#4C4C4C] xl:place-self-start"
             }
             title={"SEE PRODUCT"}
+            slug={"zx9-speaker"}
           />
         </div>
       </div>

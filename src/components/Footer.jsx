@@ -1,4 +1,8 @@
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.svg";
+import fb from "../assets/icon-facebook.svg";
+import ig from "../assets/icon-instagram.svg";
+import twitter from "../assets/icon-twitter.svg";
 
 function Footer() {
   const menu = [
@@ -8,10 +12,10 @@ function Footer() {
     { title: "Earphones" },
   ];
   return (
-    <footer className="relative mt-28 flex flex-col items-center gap-10 bg-black-soft px-5 py-10 sm:items-start">
+    <footer className="relative flex flex-col items-center gap-10 bg-black-soft px-5 py-10 sm:items-start md:px-40">
       <div className="absolute top-0 h-[4px] w-[100px] bg-orange-primary"></div>
       <div className="flex flex-col gap-4 md:w-full md:flex-row md:justify-between">
-        <img src="./logo.svg" className="w-fit" />
+        <img src={logo} className="w-fit" />
         <ul className="flex flex-col gap-6 text-center text-[13px] font-bold sm:flex-row sm:text-left">
           {menu.map((item) => (
             <Link
@@ -35,16 +39,10 @@ function Footer() {
           Copyright 2021. All Rights Reserved
         </p>
         <div className="flex gap-6">
+          <img src={fb} className="cursor-pointer fill-current text-blue-500" />
+          <img src={ig} className="cursor-pointer fill-current text-blue-500" />
           <img
-            src="icon-facebook.svg"
-            className="cursor-pointer fill-current text-blue-500"
-          />
-          <img
-            src="icon-twitter.svg"
-            className="cursor-pointer fill-current text-blue-500"
-          />
-          <img
-            src="icon-instagram.svg"
+            src={twitter}
             className="cursor-pointer fill-current text-blue-500"
           />
         </div>

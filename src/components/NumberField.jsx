@@ -10,7 +10,7 @@ function NumberField() {
     setNumber((number) => number - 1);
   };
   return (
-    <div className="flex w-fit gap-7 bg-gray-200 px-6 py-5">
+    <div className="flex h-[48px] min-w-[120px] items-center justify-center gap-7 bg-gray-200">
       <button
         className="font-bold text-black-full text-opacity-25 hover:text-orange-primary hover:text-opacity-100"
         onClick={handleDecrement}

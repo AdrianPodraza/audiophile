@@ -10,9 +10,8 @@ function Headphones() {
 
   return (
     <>
-      <div className="bg-black-full px-4 sm:px-10 md:px-40">
-        <Navbar />
-      </div>
+      <Navbar />
+
       <div className="flex items-center justify-center bg-black-full py-10 text-3xl font-bold text-white">
         HEADPHONES
       </div>
