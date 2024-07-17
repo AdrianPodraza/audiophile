@@ -7,7 +7,7 @@ import MenuMobile from "../components/MenuMobile";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.svg";
 import cart from "../assets/icon-cart.svg";
-
+import useScreenType from "../hooks/useScreenType";
 function Navbar() {
   const menu = [
     { title: "Home" },
@@ -15,6 +15,8 @@ function Navbar() {
     { title: "Speakers" },
     { title: "Earphones" },
   ];
+
+  const screenType = useScreenType();
   const [isOpen, setIsOpen] = useState(false);
   const handleMenu = function () {
     setIsOpen((isOpen) => !isOpen);
@@ -34,6 +36,9 @@ function Navbar() {
       }
     };
   }, [isOpen]);
+  useEffect(() => {
+    setIsOpen(false);
+  }, [screenType]);
 
   return (
     <>
@@ -70,7 +75,7 @@ function Navbar() {
 
         <img className="h-5" src={cart} />
       </nav>
-      {isOpen && <MenuMobile id="menu" />}
+      {isOpen && <MenuMobile fixed={true} id="menu" />}
     </>
   );
 }
