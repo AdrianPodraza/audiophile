@@ -1,9 +1,8 @@
 import { useNavigate } from "react-router-dom";
 
-function Button({ title, className, icon, slug }) {
-  const navigate = useNavigate();
+function Button({ title, className, icon, onClick }) {
   return (
-    <button className={className} onClick={() => navigate(`/product/${slug}`)}>
+    <button className={className} onClick={onClick}>
       {title} {icon}
     </button>
   );
