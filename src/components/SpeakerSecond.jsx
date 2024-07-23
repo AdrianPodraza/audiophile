@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import useScreenType from "../hooks/useScreenType";
 import Button from "./Button";
+
 function SpeakerSecond() {
   const screenType = useScreenType();
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -16,6 +19,7 @@ function SpeakerSecond() {
             "max-w-[250px] border-[1px] border-black-full bg-none px-7 py-4 font-bold text-black-full transition-all duration-300 hover:bg-black-full hover:text-gray-0 xl:place-self-start"
           }
           title={"SEE PRODUCT"}
+          onClick={() => navigate(`/product/zx7-speaker`)}
           slug={"zx7-speaker"}
         />
       </div>
