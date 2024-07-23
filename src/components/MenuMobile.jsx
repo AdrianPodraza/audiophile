@@ -3,11 +3,13 @@ import { IoIosArrowForward } from "react-icons/io";
 import speakers from "../assets/menu-images/speakers.png";
 import earphones from "../assets/menu-images/earphones.png";
 import headphones from "../assets/menu-images/headphones.png";
-function MenuMobile({ id }) {
+import { useNavigate } from "react-router-dom";
+function MenuMobile({ id, fixed }) {
+  const navigate = useNavigate();
   return (
     <div
       id={id}
-      className="flex w-screen max-w-full flex-col items-center gap-11 bg-gray-100 py-11 sm:max-w-full sm:flex-row sm:justify-between"
+      className={`${fixed ? "fixed" : " "} z-50 flex w-screen max-w-full flex-col items-center gap-11 bg-gray-100 py-11 sm:max-w-full sm:flex-row sm:justify-between`}
     >
       <div className="flex w-full flex-col items-center gap-4 rounded-lg bg-gray-200 pb-4">
         <img className="-mt-9 w-24" src={headphones} alt="headphones" />
@@ -17,6 +19,7 @@ function MenuMobile({ id }) {
             "flex items-center gap-2 text-center text-[13px] font-bold text-black-full text-opacity-50 hover:text-orange-primary"
           }
           title={"SHOP"}
+          onClick={() => navigate("/headphones")}
           icon={<IoIosArrowForward className="text-orange-primary" />}
         />
       </div>
@@ -28,6 +31,7 @@ function MenuMobile({ id }) {
             "flex items-center gap-2 text-center text-[13px] font-bold text-black-full text-opacity-50 hover:text-orange-primary"
           }
           title={"SHOP"}
+          onClick={() => navigate("/speakers")}
           icon={<IoIosArrowForward className="text-orange-primary" />}
         />
       </div>
@@ -39,6 +43,7 @@ function MenuMobile({ id }) {
             "flex items-center gap-2 text-center text-[13px] font-bold text-black-full text-opacity-50 hover:text-orange-primary"
           }
           title={"SHOP"}
+          onClick={() => navigate("/earphones")}
           icon={<IoIosArrowForward className="text-orange-primary" />}
         />
       </div>
