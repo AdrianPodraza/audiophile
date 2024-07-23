@@ -3,6 +3,7 @@ import { useState } from "react";
 function NumberField() {
   const [number, setNumber] = useState(1);
   const handleIncrement = function () {
+    if (number >= 20) return;
     setNumber((number) => number + 1);
   };
   const handleDecrement = function () {
