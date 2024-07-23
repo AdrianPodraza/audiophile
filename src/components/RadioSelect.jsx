@@ -3,7 +3,7 @@ import { useState } from "react";
 function RadioSelect({ name, label, value, selectedValue, onChange }) {
   return (
     <div
-      className={`flex max-w-[300px] gap-4 rounded-lg border-2 ${
+      className={`flex gap-4 rounded-lg border-2 ${
         selectedValue === value ? "border-orange-primary" : "border-gray-100"
       } bg-white px-4 py-3`}
     >
