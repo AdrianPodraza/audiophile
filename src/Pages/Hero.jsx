@@ -1,5 +1,7 @@
 import Button from "../components/Button";
+import { useNavigate } from "react-router-dom";
 function Hero() {
+  const navigate = useNavigate();
   return (
     <section className="h-screen bg-hero-image-mobile bg-cover bg-center sm:bg-hero-image">
       <div className="mx-4 flex max-w-[400px] flex-col gap-9 py-24 sm:mx-10 md:mx-40">
@@ -18,7 +20,7 @@ function Hero() {
             "max-w-[160px] bg-orange-primary px-7 py-4 text-[13px] font-bold text-gray-0 hover:bg-orange-secondary"
           }
           title={"SEE PRODUCT"}
-          slug={"xx99-mark-ii-headphones"}
+          onClick={() => navigate(`/product/xx99-mark-ii-headphones`)}
         />
       </div>
     </section>
