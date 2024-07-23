@@ -119,53 +119,89 @@ function Checkout() {
       <Navbar />
       <form
         onSubmit={handleSubmit}
-        className="flex w-full flex-col gap-7 rounded-xl bg-gray-100 px-4 pt-4 shadow-lg sm:px-8 md:gap-32 md:px-40 md:pt-12"
+        className="flex w-full flex-col rounded-xl bg-gray-100 px-4 pt-4 shadow-lg sm:px-8 md:gap-32 md:px-40 md:pt-12"
       >
         <button type="button" className="w-fit text-[15px] text-opacity-50">
           Go back
         </button>
         <div className="flex flex-col gap-6 rounded-xl bg-white px-4 py-4">
           <h3 className="text-[28px] font-bold">CHECKOUT</h3>
-          <span className="text-[13px] text-orange-primary">
-            BILLING DETAILS
-          </span>
-          {renderInput("name", "Name", "Type your name")}
-          {renderInput("email", "Email Address", "Type your email", "email")}
-          {renderInput(
-            "phone",
-            "Phone Number",
-            "Type your phone number",
-            "tel",
-          )}
-          <span className="text-[13px] text-orange-primary">SHIPPING INFO</span>
-          {renderInput("address", "Your Address", "1137 Williams Avenue")}
-          {renderInput("zipCode", "ZIP Code", "39-203")}
-          {renderInput("city", "City", "New York")}
-          {renderInput("country", "Country", "United States")}
-          <span className="text-[13px] text-orange-primary">
-            PAYMENT DETAILS
-          </span>
-          <RadioSelect
-            name="payment"
-            label="e-Money"
-            value="e-Money"
-            selectedValue={paymentMethod}
-            onChange={setPaymentMethod}
-          />
-          <RadioSelect
-            name="payment"
-            label="Cash on Delivery"
-            value="Cash"
-            selectedValue={paymentMethod}
-            onChange={setPaymentMethod}
-          />
+          <div className="flex flex-col gap-7 sm:grid sm:grid-cols-2">
+            <span className="h-fit text-[13px] text-orange-primary sm:row-start-1">
+              BILLING DETAILS
+            </span>
+            <div className="h-fit sm:col-span-1 sm:row-start-2">
+              {renderInput("name", "Name", "Type your name")}
+            </div>
+            <div className="h-fit sm:col-span-1 sm:row-start-2">
+              {renderInput(
+                "email",
+                "Email Address",
+                "Type your email",
+                "email",
+              )}
+            </div>
+            <div className="h-fit sm:row-start-3">
+              {renderInput(
+                "phone",
+                "Phone Number",
+                "Type your phone number",
+                "tel",
+              )}
+            </div>
+          </div>
+          <div className="flex flex-col gap-7 sm:grid sm:grid-cols-2">
+            <span className="h-fit text-[13px] text-orange-primary">
+              SHIPPING INFO
+            </span>
+            <div className="h-fit sm:col-span-2 sm:row-start-2">
+              {renderInput("address", "Your Address", "1137 Williams Avenue")}
+            </div>
+            <div className="h-fit sm:row-start-3">
+              {renderInput("zipCode", "ZIP Code", "39-203")}
+            </div>
+            <div className="h-fit sm:row-start-3">
+              {renderInput("city", "City", "New York")}
+            </div>
+            <div className="h-fit sm:row-start-4">
+              {renderInput("country", "Country", "United States")}
+            </div>
+          </div>
+          <div className="flex flex-col gap-7 sm:grid sm:grid-cols-2">
+            <span className="text-[13px] text-orange-primary">
+              PAYMENT DETAILS
+            </span>
 
-          {paymentMethod === "e-Money" && (
-            <>
-              {renderInput("eMoneyNumber", "e-Money Number", "238521993")}
-              {renderInput("eMoneyPin", "e-Money PIN", "9861")}
-            </>
-          )}
+            <div className="h-fit sm:col-start-2 sm:row-start-2">
+              <RadioSelect
+                name="payment"
+                label="e-Money"
+                value="e-Money"
+                selectedValue={paymentMethod}
+                onChange={setPaymentMethod}
+              />
+            </div>
+            <div className="h-fit sm:col-start-2 sm:row-start-3">
+              <RadioSelect
+                name="payment"
+                label="Cash on Delivery"
+                value="Cash"
+                selectedValue={paymentMethod}
+                onChange={setPaymentMethod}
+              />
+            </div>
+
+            {paymentMethod === "e-Money" && (
+              <>
+                <div className="sm:col-start-1 sm:row-start-4">
+                  {renderInput("eMoneyNumber", "e-Money Number", "238521993")}
+                </div>
+                <div className="sm:col-start-2 sm:row-start-4">
+                  {renderInput("eMoneyPin", "e-Money PIN", "9861")}
+                </div>
+              </>
+            )}
+          </div>
           <button
             type="submit"
             className="rounded-lg bg-orange-primary px-4 py-2 text-white"
