@@ -4,12 +4,12 @@ import speakers from "../assets/menu-images/speakers.png";
 import earphones from "../assets/menu-images/earphones.png";
 import headphones from "../assets/menu-images/headphones.png";
 import { useNavigate } from "react-router-dom";
-function MenuMobile({ id, fixed }) {
+function MenuMobile({ id, fixed, bgcolor }) {
   const navigate = useNavigate();
   return (
     <div
       id={id}
-      className={`${fixed ? "fixed" : " "} z-50 flex w-screen max-w-full flex-col items-center gap-11 bg-gray-100 py-11 sm:max-w-full sm:flex-row sm:justify-between`}
+      className={`${fixed ? "fixed z-50" : "z-40"} flex w-screen max-w-full flex-col items-center gap-11 ${bgcolor} py-11 sm:max-w-full sm:flex-row sm:justify-between`}
     >
       <div className="flex w-full flex-col items-center gap-4 rounded-lg bg-gray-200 pb-4">
         <img className="-mt-9 w-24" src={headphones} alt="headphones" />
