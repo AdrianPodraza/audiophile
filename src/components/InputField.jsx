@@ -1,6 +1,6 @@
 function InputField({ type, placeholder, label, textColor }) {
   return (
-    <div className="flex max-w-[300px] flex-col">
+    <div className="flex flex-col">
       <label className={`${textColor} font-bold`} htmlFor={label}>
         {label}
       </label>

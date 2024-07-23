@@ -8,7 +8,7 @@ function InputFieldError({
   errorMessage,
 }) {
   return (
-    <div className="flex max-w-[300px] flex-col">
+    <div className="flex flex-col">
       <div className="flex justify-between">
         <label className="font-bold text-red-500" htmlFor={name}>
           {label}
