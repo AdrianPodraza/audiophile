@@ -1,19 +1,19 @@
 import { useState, useEffect } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
-
 import gsap from "gsap";
 import MenuMobile from "../components/MenuMobile";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.svg";
 import cart from "../assets/icon-cart.svg";
 import useScreenType from "../hooks/useScreenType";
+
 function Navbar() {
   const menu = [
-    { title: "Home" },
-    { title: "Headphones" },
-    { title: "Speakers" },
-    { title: "Earphones" },
+    { title: "Home", path: "/" },
+    { title: "Headphones", path: "/headphones" },
+    { title: "Speakers", path: "/speakers" },
+    { title: "Earphones", path: "/earphones" },
   ];
 
   const screenType = useScreenType();
@@ -21,6 +21,7 @@ function Navbar() {
   const handleMenu = function () {
     setIsOpen((isOpen) => !isOpen);
   };
+
   useEffect(() => {
     let animation;
 
@@ -36,6 +37,7 @@ function Navbar() {
       }
     };
   }, [isOpen]);
+
   useEffect(() => {
     setIsOpen(false);
   }, [screenType]);
@@ -54,13 +56,13 @@ function Navbar() {
             className={`${isOpen ? "hidden" : "flex"} cursor-pointer text-white sm:hidden`}
           />
 
-          <img src={logo} />
+          <img src={logo} alt="logo" />
         </div>
 
         <ul className="hidden gap-8 text-white sm:flex">
           {menu.map((item) => (
             <NavLink
-              to={`/${item.title.toLowerCase()}`}
+              to={item.path}
               key={item.title}
               className={({ isActive }) =>
                 isActive
@@ -75,7 +77,7 @@ function Navbar() {
 
         <img className="h-5" src={cart} />
       </nav>
-      {isOpen && <MenuMobile fixed={true} id="menu" />}
+      {isOpen && <MenuMobile fixed={true} id="menu" bgcolor="bg-white" />}
     </>
   );
 }
