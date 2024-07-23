@@ -1,16 +1,27 @@
-function InputFieldError({ type, placeholder, label }) {
+function InputFieldError({
+  type,
+  placeholder,
+  label,
+  name,
+  value,
+  onChange,
+  errorMessage,
+}) {
   return (
     <div className="flex max-w-[300px] flex-col">
       <div className="flex justify-between">
-        <label className="text-red-500 font-bold" htmlFor={type}>
+        <label className="font-bold text-red-500" htmlFor={name}>
           {label}
         </label>
-        <span className="text-red-500">Wrong format</span>
+        <span className="text-red-500">{errorMessage}</span>
       </div>
       <input
-        className="border-red-500 rounded-lg border-2 px-4 py-3 font-bold caret-orange-primary outline-none focus:border-orange-primary focus:ring-0"
+        className="rounded-lg border-2 border-red-500 px-4 py-3 font-bold caret-orange-primary outline-none focus:border-orange-primary focus:ring-0"
         type={type}
         placeholder={placeholder}
+        name={name}
+        value={value}
+        onChange={onChange}
       />
     </div>
   );
