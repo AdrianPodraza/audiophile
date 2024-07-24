@@ -5,6 +5,7 @@ import InputField from "../components/InputField";
 import InputFieldError from "../components/InputFieldError";
 import RadioSelect from "../components/RadioSelect";
 import Summary from "../components/Summary";
+import OrderModal from "../components/OrderModal";
 
 function Checkout() {
   const [paymentMethod, setPaymentMethod] = useState("e-Money");
@@ -21,6 +22,7 @@ function Checkout() {
   });
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // Stan modalu
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -45,9 +47,9 @@ function Checkout() {
     }
 
     // Phone validation
-    const phoneRegex = /^\d{10}$/;
+    const phoneRegex = /^\d{9}$/;
     if (!formData.phone.trim() || !phoneRegex.test(formData.phone)) {
-      newErrors.phone = "Valid 10-digit phone number is required";
+      newErrors.phone = "Valid 9-digit phone number is required";
     }
 
     // Address validation
@@ -56,7 +58,7 @@ function Checkout() {
     }
 
     // ZIP Code validation
-    const zipCodeRegex = /^\d{5}(-\d{4})?$/;
+    const zipCodeRegex = /^\d{2}(-\d{3})?$/;
     if (!formData.zipCode.trim() || !zipCodeRegex.test(formData.zipCode)) {
       newErrors.zipCode = "Valid ZIP code is required";
     }
@@ -92,7 +94,7 @@ function Checkout() {
     e.preventDefault();
     setIsSubmitted(true);
     if (validateForm()) {
-      // Process the form submission
+      setIsModalOpen(true); // Otwórz modal po pomyślnym przesłaniu formularza
       console.log("Form submitted successfully", formData);
     } else {
       console.log("Form has errors");
@@ -209,6 +211,14 @@ function Checkout() {
         </div>
       </form>
       <Footer />
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <div className="absolute inset-0 bg-black-full opacity-50" />
+          <div className="relative z-10 rounded-lg bg-white p-6 shadow-lg">
+            <OrderModal />
+          </div>
+        </div>
+      )}
     </>
   );
 }
