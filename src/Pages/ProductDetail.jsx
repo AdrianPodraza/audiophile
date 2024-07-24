@@ -4,10 +4,13 @@ import NumberField from "../components/NumberField";
 import data from "../assets/data.json";
 import { useParams } from "react-router-dom";
 import useScreenType from "../hooks/useScreenType";
+import { useCart } from "../context/CartContext";
 
 import BottomSecttion from "../components/BottomSecttion";
 import Footer from "../components/Footer";
 import MenuMobile from "../components/MenuMobile";
+import { useState } from "react";
+import toast from "react-hot-toast";
 
 function ProductDetail() {
   const { slug } = useParams();
@@ -15,6 +18,19 @@ function ProductDetail() {
   const screenType = useScreenType();
   const currentImage =
     product?.image?.[screenType] ?? product?.categoryImage?.desktop;
+  const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: currentImage,
+      quantity: quantity,
+    });
+    toast.success(`${product.name} added to cart`);
+  };
 
   return (
     <>
@@ -39,12 +55,13 @@ function ProductDetail() {
             </p>
             <span className="text-lg font-bold">${product.price}</span>
             <div className="flex justify-between sm:justify-start sm:gap-7">
-              <NumberField />
+              <NumberField value={quantity} onChange={setQuantity} />
               <Button
                 className={
                   "h-[48px] w-[160px] bg-orange-primary px-7 py-4 text-[13px] font-bold text-gray-0 hover:bg-orange-secondary"
                 }
                 title={"ADD TO CART"}
+                onClick={() => handleAddToCart()}
               />
             </div>
           </div>
