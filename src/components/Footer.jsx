@@ -6,10 +6,10 @@ import twitter from "../assets/icon-twitter.svg";
 
 function Footer() {
   const menu = [
-    { title: "Home" },
-    { title: "Headphones" },
-    { title: "Speakers" },
-    { title: "Earphones" },
+    { title: "Home", path: "/" },
+    { title: "Headphones", path: "/headphones" },
+    { title: "Speakers", path: "/speakers" },
+    { title: "Earphones", path: "/earphones" },
   ];
   return (
     <footer className="relative flex flex-col items-center gap-10 bg-black-soft px-5 py-10 sm:items-start md:px-40">
@@ -19,7 +19,7 @@ function Footer() {
         <ul className="flex flex-col gap-6 text-center text-[13px] font-bold sm:flex-row sm:text-left">
           {menu.map((item) => (
             <Link
-              to={`/${item.title}`}
+              to={item.path}
               key={item.title}
               className="cursor-pointer text-[13px] text-white hover:text-orange-primary"
             >
