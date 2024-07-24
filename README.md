@@ -1,8 +1,36 @@
-# React + Vite
+# E-commerce Checkout Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of Contents
 
-Currently, two official plugins are available:
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Introduction
+
+This is an e-commerce checkout application built with React. It allows users to browse products, add them to the cart, and proceed to checkout. The application includes form validation, dynamic cart updates, and a summary of the order with a modal confirmation.
+
+## Features
+
+- Browse products
+- Add products to the cart
+- View cart with dynamic updates
+- Form validation for checkout
+- Modal confirmation after successful checkout
+- Responsive design
+
+## Installation
+
+To run this project locally, follow these steps:
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/ecommerce-checkout.git
+   cd ecommerce-checkout
+   ```
+
+## License
