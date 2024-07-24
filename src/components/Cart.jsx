@@ -42,6 +42,11 @@ function Cart({ setIsCartOpen }) {
           {cart.map((item) => (
             <div key={item.id} className="flex justify-between">
               <div className="flex gap-4">
+                <img
+                  src={item.image}
+                  alt="cart-item "
+                  className="w-[64px] rounded-xl"
+                />
                 <div className="flex flex-col">
                   <span className="text-[15px] font-bold">{item.name}</span>
                   <span className="text-[14px] font-bold opacity-50">
