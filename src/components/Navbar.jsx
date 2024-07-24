@@ -5,8 +5,10 @@ import gsap from "gsap";
 import MenuMobile from "../components/MenuMobile";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.svg";
-import cart from "../assets/icon-cart.svg";
+import cartIcon from "../assets/icon-cart.svg";
 import useScreenType from "../hooks/useScreenType";
+import { useCart } from "../context/CartContext"; // Importuj kontekst koszyka
+import Cart from "../components/Cart"; // Importuj komponent Cart
 
 function Navbar() {
   const menu = [
@@ -18,8 +20,16 @@ function Navbar() {
 
   const screenType = useScreenType();
   const [isOpen, setIsOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false); // Stan modalu koszyka
+  const { cart } = useCart(); // Użyj kontekstu koszyka
+  const cartItemCount = cart.length; // Liczba różnych produktów w koszyku
+
   const handleMenu = function () {
     setIsOpen((isOpen) => !isOpen);
+  };
+
+  const handleCart = () => {
+    setIsCartOpen((isCartOpen) => !isCartOpen);
   };
 
   useEffect(() => {
@@ -50,15 +60,14 @@ function Navbar() {
             onClick={handleMenu}
             className={`${isOpen ? "flex" : "hidden"} cursor-pointer text-white sm:hidden`}
           />
-
           <GiHamburgerMenu
             onClick={handleMenu}
             className={`${isOpen ? "hidden" : "flex"} cursor-pointer text-white sm:hidden`}
           />
-
-          <img src={logo} alt="logo" />
+          <NavLink to="/">
+            <img src={logo} alt="logo" />
+          </NavLink>
         </div>
-
         <ul className="hidden gap-8 text-white sm:flex">
           {menu.map((item) => (
             <NavLink
@@ -74,10 +83,40 @@ function Navbar() {
             </NavLink>
           ))}
         </ul>
-
-        <img className="h-5" src={cart} />
+        <div className="relative">
+          <img
+            className="h-5 cursor-pointer"
+            src={cartIcon}
+            alt="Cart"
+            onClick={handleCart}
+          />
+          {cartItemCount > 0 && (
+            <span className="absolute -right-2 -top-2 rounded-full bg-red-600 px-2 text-xs text-white">
+              {cartItemCount}
+            </span>
+          )}
+        </div>
       </nav>
-      {isOpen && <MenuMobile fixed={true} id="menu" bgcolor="bg-white" />}
+      {isOpen && (
+        <>
+          <div
+            className="fixed inset-0 h-screen w-screen bg-black-full opacity-50"
+            onClick={handleMenu}
+          />
+          <MenuMobile fixed={true} id="menu" bgcolor="bg-white" />
+        </>
+      )}
+
+      {isCartOpen && (
+        <div>
+          <div
+            className="fixed inset-0 z-[60] h-screen w-screen bg-black-full opacity-50"
+            onClick={handleCart}
+          />
+
+          <Cart setIsCartOpen={setIsCartOpen} />
+        </div>
+      )}
     </>
   );
 }
