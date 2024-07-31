@@ -34,3 +34,5 @@ To run this project locally, follow these steps:
    ```
 
 ## License
+
+MIT
