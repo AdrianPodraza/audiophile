@@ -35,12 +35,7 @@ To run this project locally, follow these steps:
 
 ## Screen Shots
 
-https://i.postimg.cc/T38Cn6sZ/Zrzut-ekranu-2024-08-06-220559.png
-https://i.postimg.cc/1zBBxNzQ/Zrzut-ekranu-2024-08-06-220623.png
-https://i.postimg.cc/Pxq4drL8/Zrzut-ekranu-2024-08-06-220655.png
-https://i.postimg.cc/ht9MrYWh/Zrzut-ekranu-2024-08-06-220719.png
-https://i.postimg.cc/HLdzPtdz/Zrzut-ekranu-2024-08-06-220758.png
-https://i.postimg.cc/TwHc1MmN/Zrzut-ekranu-2024-08-06-220823.png
+https://github.com/AdrianPodraza/audiophile/issues/1#issue-2451615650
 
 
 
