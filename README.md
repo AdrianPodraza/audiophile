@@ -33,6 +33,22 @@ To run this project locally, follow these steps:
    cd audiophile
    ```
 
+## Screen Shots
+
+[url=https://postimg.cc/ZCc8h14c][img]https://i.postimg.cc/ZCc8h14c/Zrzut-ekranu-2024-08-06-220559.png[/img][/url]
+
+[url=https://postimg.cc/qttyyqnb][img]https://i.postimg.cc/qttyyqnb/Zrzut-ekranu-2024-08-06-220623.png[/img][/url]
+
+[url=https://postimg.cc/DWtsghP2][img]https://i.postimg.cc/DWtsghP2/Zrzut-ekranu-2024-08-06-220655.png[/img][/url]
+
+[url=https://postimg.cc/xX1KjtdS][img]https://i.postimg.cc/xX1KjtdS/Zrzut-ekranu-2024-08-06-220719.png[/img][/url]
+
+[url=https://postimg.cc/4Y2pYVKH][img]https://i.postimg.cc/4Y2pYVKH/Zrzut-ekranu-2024-08-06-220758.png[/img][/url]
+
+[url=https://postimg.cc/8JMvXYZL][img]https://i.postimg.cc/8JMvXYZL/Zrzut-ekranu-2024-08-06-220823.png[/img][/url]
+
+
+
 ## Live Site
  https://audiophile-ap.netlify.app/
 
