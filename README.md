@@ -32,6 +32,14 @@ To run this project locally, follow these steps:
    git clone https://github.com/AdrianPodraza/audiophile
    cd audiophile
    ```
+   2. **Instal Packages**
+   ```bash
+   npm i
+   ```
+   1. **Run locally**
+   ```bash
+   npm run dev
+   ```
 
 ## Screen Shots
 
