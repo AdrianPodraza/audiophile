@@ -34,7 +34,7 @@ To run this project locally, follow these steps:
    ```
 
 ## Live Site
-[a link] https://audiophile-ap.netlify.app/
+ https://audiophile-ap.netlify.app/
 
 ## License
 
