@@ -5,9 +5,8 @@
 - [Introduction](#introduction)
 - [Features](#features)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
+- [Screen Shots](#screen-shots)
+- [Live Site](#live-site)
 - [License](#license)
 
 ## Introduction
